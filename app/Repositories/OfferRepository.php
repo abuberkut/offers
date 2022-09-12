@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+use App\Constants\TableNames;
 use App\Entities\EOffer;
 use App\LoadConfig;
 use App\Models\Offer;
@@ -16,7 +17,7 @@ class OfferRepository implements IOfferRepository {
      * @inheritDoc
      */
     public function load(LoadConfig $loadConfig, OfferFilters $offerFilters): array {
-        return DB::table(Offer::TABLE_NAME . " as o")->select([
+        return DB::table(TableNames::OFFERS . " as o")->select([
             "p.name as product_name",
             "p.description",
             "p.image_link",

@@ -43,7 +43,6 @@ use Illuminate\Support\Carbon;
 class Offer extends Model
 {
     use HasFactory, SoftDeletes;
-    public const TABLE_NAME = "offers";
 
     public function seller(): BelongsTo {
         return $this->belongsTo(Seller::class);
